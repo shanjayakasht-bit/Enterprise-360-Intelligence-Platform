@@ -8,3 +8,4 @@ data/raw/*.csv
 data/sample/*.csv
 data/validation/*.csv
 .ipynb_checkpoints/
+artifacts/models/*.joblib

@@ -1,0 +1,75 @@
+{
+  "model_version": "phase4-v1",
+  "selected_algorithm": "RandomForest",
+  "algorithms_compared": {
+    "LogisticRegression": {
+      "accuracy": 0.6512715033657442,
+      "precision": 0.5215311004784688,
+      "recall": 0.6629498226051698,
+      "f1": 0.5837982593171167,
+      "roc_auc": 0.7155542039758969,
+      "confusion_matrix": [
+        [
+          2175,
+          1200
+        ],
+        [
+          665,
+          1308
+        ]
+      ]
+    },
+    "RandomForest": {
+      "accuracy": 0.6684741959611069,
+      "precision": 0.5431034482758621,
+      "recall": 0.6386213887480994,
+      "f1": 0.5870020964360587,
+      "roc_auc": 0.721313284901729,
+      "confusion_matrix": [
+        [
+          2315,
+          1060
+        ],
+        [
+          713,
+          1260
+        ]
+      ]
+    }
+  },
+  "class_distribution": {
+    "0": 13501,
+    "1": 7891
+  },
+  "train_rows": 16044,
+  "test_rows": 5348,
+  "features": [
+    "TOTAL_AMOUNT",
+    "INVOICE_AGE_DAYS",
+    "PRODUCT_USAGE_SCORE",
+    "ENGAGEMENT_SCORE",
+    "SATISFACTION_SCORE",
+    "CUSTOMER_HISTORICAL_AVG_DELAY",
+    "SEGMENT",
+    "REGION_NAME"
+  ],
+  "target": "invoice_payment_was_late (days_late > 0)",
+  "training_population": "invoices with a recorded payment (status resolved)",
+  "feature_importance": {
+    "TOTAL_AMOUNT": 0.06633074208102889,
+    "INVOICE_AGE_DAYS": 0.032605006245616554,
+    "PRODUCT_USAGE_SCORE": 0.14499614623051876,
+    "ENGAGEMENT_SCORE": 0.19744366786052553,
+    "SATISFACTION_SCORE": 0.11452132506472197,
+    "CUSTOMER_HISTORICAL_AVG_DELAY": 0.40029646098172955,
+    "SEGMENT_Enterprise": 0.004129973469082686,
+    "SEGMENT_Mid-Market": 0.005213634911958089,
+    "SEGMENT_Smb": 0.005747526691235084,
+    "SEGMENT_Startup": 0.004155034457778771,
+    "REGION_NAME_Asia Pacific": 0.005150980912865525,
+    "REGION_NAME_Europe": 0.004916457303028681,
+    "REGION_NAME_Latin America": 0.004679324924954072,
+    "REGION_NAME_Middle East & Africa": 0.004351618160015642,
+    "REGION_NAME_North America": 0.005462100704940209
+  }
+}

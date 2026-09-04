@@ -1,0 +1,39 @@
+{
+  "model_version": "phase4-v1",
+  "selected_method": "holt_winters_trend_only",
+  "methods_compared": {
+    "seasonal_naive": {
+      "mae": 210568544.91,
+      "rmse": 217530069.037913,
+      "mape_pct": 85.40511929697145
+    },
+    "moving_average_3mo": {
+      "mae": 122936664.74999999,
+      "rmse": 136164850.9847049,
+      "mape_pct": 47.530012178069306
+    },
+    "holt_winters_seasonal": {
+      "mae": 91924582.39703242,
+      "rmse": 103993139.22662257,
+      "mape_pct": 35.125707940806
+    },
+    "holt_winters_trend_only": {
+      "mae": 88128856.88472345,
+      "rmse": 100776556.52890496,
+      "mape_pct": 33.49990288625291
+    }
+  },
+  "train_months": 33,
+  "test_months": 3,
+  "forecast_horizon_months": 3,
+  "target": "monthly total invoice_amount (ANALYTICS.VW_REVENUE_TRENDS)",
+  "chronological_split": true,
+  "train_period": [
+    "2023-09-01",
+    "2026-05-01"
+  ],
+  "test_period": [
+    "2026-06-01",
+    "2026-08-01"
+  ]
+}

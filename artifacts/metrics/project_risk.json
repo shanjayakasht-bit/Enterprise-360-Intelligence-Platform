@@ -1,0 +1,76 @@
+{
+  "model_version": "phase4-v1",
+  "selected_algorithm": "RandomForest",
+  "algorithms_compared": {
+    "LogisticRegression": {
+      "accuracy": 0.5139977603583427,
+      "precision": 0.41330166270783847,
+      "recall": 0.481994459833795,
+      "f1": 0.44501278772378516,
+      "roc_auc": 0.5180732301668298,
+      "confusion_matrix": [
+        [
+          285,
+          247
+        ],
+        [
+          187,
+          174
+        ]
+      ]
+    },
+    "RandomForest": {
+      "accuracy": 0.5263157894736842,
+      "precision": 0.4251207729468599,
+      "recall": 0.48753462603878117,
+      "f1": 0.4541935483870968,
+      "roc_auc": 0.5198201528752628,
+      "confusion_matrix": [
+        [
+          294,
+          238
+        ],
+        [
+          185,
+          176
+        ]
+      ]
+    }
+  },
+  "class_distribution": {
+    "0": 2127,
+    "1": 1442
+  },
+  "train_rows": 2676,
+  "test_rows": 893,
+  "features": [
+    "BUDGET",
+    "PLANNED_DURATION_DAYS",
+    "SEGMENT",
+    "REGION_NAME",
+    "SERVICE_NAME",
+    "DEPARTMENT_NAME"
+  ],
+  "target": "project_finished_late (Delayed status, or Completed after planned_end_date)",
+  "training_population": "projects with status IN ('Completed','Delayed') -- resolved outcomes only",
+  "feature_importance": {
+    "BUDGET": 0.3443178246578242,
+    "PLANNED_DURATION_DAYS": 0.3148967781406422,
+    "SEGMENT_Enterprise": 0.02506241132258059,
+    "SEGMENT_Mid-Market": 0.028630495836472338,
+    "SEGMENT_Smb": 0.020126648142975233,
+    "SEGMENT_Startup": 0.016194007567025093,
+    "REGION_NAME_Asia Pacific": 0.022596614628455965,
+    "REGION_NAME_Europe": 0.021127169327542963,
+    "REGION_NAME_Latin America": 0.022543088417199902,
+    "REGION_NAME_Middle East & Africa": 0.02744932814415765,
+    "REGION_NAME_North America": 0.022115308451955955,
+    "SERVICE_NAME_Analytics Rollout": 0.020777719150588125,
+    "SERVICE_NAME_Custom Integration": 0.020879585369892897,
+    "SERVICE_NAME_Data Migration": 0.02079260150994381,
+    "SERVICE_NAME_Implementation": 0.021656957527391135,
+    "SERVICE_NAME_Managed Services Engagement": 0.022372024626664173,
+    "SERVICE_NAME_Platform Upgrade": 0.028461437178687786,
+    "DEPARTMENT_NAME_Project Management": 0.0
+  }
+}
