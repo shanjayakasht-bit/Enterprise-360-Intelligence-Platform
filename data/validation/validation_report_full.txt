@@ -1,0 +1,64 @@
+NEXORA DATA VALIDATION SUMMARY
+============================================================
+[PASS] customers.customer_id primary key: 5000 rows, 0 null keys, 0 duplicate keys
+[PASS] customers mandatory fields: no nulls in mandatory fields
+[PASS] customers range constraints: within expected ranges
+[PASS] employees.employee_id primary key: 1000 rows, 0 null keys, 0 duplicate keys
+[PASS] employees mandatory fields: no nulls in mandatory fields
+[PASS] leads.lead_id primary key: 15000 rows, 0 null keys, 0 duplicate keys
+[PASS] leads mandatory fields: no nulls in mandatory fields
+[PASS] leads range constraints: within expected ranges
+[PASS] deals.deal_id primary key: 20000 rows, 0 null keys, 0 duplicate keys
+[PASS] deals mandatory fields: no nulls in mandatory fields
+[PASS] deals range constraints: within expected ranges
+[PASS] subscriptions.subscription_id primary key: 10000 rows, 0 null keys, 0 duplicate keys
+[PASS] subscriptions mandatory fields: no nulls in mandatory fields
+[PASS] projects.project_id primary key: 8000 rows, 0 null keys, 0 duplicate keys
+[PASS] projects mandatory fields: no nulls in mandatory fields
+[PASS] projects range constraints: within expected ranges
+[PASS] invoices.invoice_id primary key: 30000 rows, 0 null keys, 0 duplicate keys
+[PASS] invoices mandatory fields: no nulls in mandatory fields
+[PASS] payments.payment_id primary key: 22777 rows, 0 null keys, 0 duplicate keys
+[PASS] payments mandatory fields: no nulls in mandatory fields
+[PASS] support_tickets.ticket_id primary key: 40000 rows, 0 null keys, 0 duplicate keys
+[PASS] support_tickets mandatory fields: no nulls in mandatory fields
+[PASS] support_tickets range constraints: within expected ranges
+[PASS] customer_activity.activity_id primary key: 50000 rows, 0 null keys, 0 duplicate keys
+[PASS] customer_activity mandatory fields: no nulls in mandatory fields
+[PASS] leads.customer_id -> customers.customer_id: 15000 non-null references checked, 0 orphaned
+[PASS] leads.assigned_salesperson_id -> employees.employee_id: 15000 non-null references checked, 0 orphaned
+[PASS] deals.customer_id -> customers.customer_id: 20000 non-null references checked, 0 orphaned
+[PASS] deals.sales_rep_id -> employees.employee_id: 20000 non-null references checked, 0 orphaned
+[PASS] deals.lead_id -> leads.lead_id: 3000 non-null references checked, 0 orphaned
+[PASS] subscriptions.customer_id -> customers.customer_id: 10000 non-null references checked, 0 orphaned
+[PASS] subscriptions.deal_id -> deals.deal_id: 6056 non-null references checked, 0 orphaned
+[PASS] projects.customer_id -> customers.customer_id: 8000 non-null references checked, 0 orphaned
+[PASS] projects.project_manager_id -> employees.employee_id: 8000 non-null references checked, 0 orphaned
+[PASS] projects.deal_id -> deals.deal_id: 6056 non-null references checked, 0 orphaned
+[PASS] invoices.customer_id -> customers.customer_id: 30000 non-null references checked, 0 orphaned
+[PASS] invoices.subscription_id -> subscriptions.subscription_id: 19622 non-null references checked, 0 orphaned
+[PASS] invoices.project_id -> projects.project_id: 7357 non-null references checked, 0 orphaned
+[PASS] payments.invoice_id -> invoices.invoice_id: 22777 non-null references checked, 0 orphaned
+[PASS] payments.customer_id -> customers.customer_id: 22777 non-null references checked, 0 orphaned
+[PASS] support_tickets.customer_id -> customers.customer_id: 40000 non-null references checked, 0 orphaned
+[PASS] support_tickets.agent_id -> employees.employee_id: 40000 non-null references checked, 0 orphaned
+[PASS] customer_activity.customer_id -> customers.customer_id: 50000 non-null references checked, 0 orphaned
+[PASS] customers.account_manager_id -> employees.employee_id: 5000 non-null references checked, 0 orphaned
+[PASS] employees.manager_id -> employees.employee_id: 999 non-null references checked, 0 orphaned
+[PASS] invoices linkage to subscription/project: 26979/30000 invoices linked to a subscription or project (standalone invoices allowed)
+[PASS] projects date consistency (start_date -> planned_end_date): planned_end_date >= start_date for all rows (0 violations)
+[PASS] projects date consistency (start_date -> actual_end_date): actual_end_date >= start_date for all rows (0 violations)
+[PASS] projects: Completed status has actual_end_date: 0 completed projects missing actual_end_date
+[PASS] payments never exceed invoice total: 0 invoices overpaid
+[PASS] 'Paid' invoices fully covered by payments: 0 'Paid' invoices with mismatched payment total
+[PASS] 'Unpaid'/'Cancelled' invoices have no payments: 0 unpaid/cancelled invoices with payments recorded
+[PASS] deals date consistency (created_date -> close_date): close_date >= created_date for all rows (0 violations)
+[PASS] subscriptions date consistency (start_date -> end_date): end_date >= start_date for all rows (0 violations)
+[PASS] invoices date consistency (invoice_date -> due_date): due_date >= invoice_date for all rows (0 violations)
+[PASS] customers.churn_risk_score matches business rule formula: 0 customers with mismatched risk score
+[PASS] projects.project_risk_score matches business rule formula: 0 projects with mismatched risk score
+[PASS] customers.signup_date not in the future: 0 rows dated after today
+[PASS] customers.contract_start_date not in the future: 0 rows dated after today
+[PASS] payments.payment_date not in the future: 0 rows dated after today
+------------------------------------------------------------
+Total checks: 60   Passed: 60   Failed: 0
