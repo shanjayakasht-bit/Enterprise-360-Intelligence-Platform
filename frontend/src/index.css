@@ -1,0 +1,80 @@
+@import "tailwindcss";
+
+/* NEXORA design tokens -- premium light enterprise theme.
+   Restrained blue/teal accents, soft shadows, subtle borders, no
+   gradients or glassmorphism. Referenced via Tailwind utility classes
+   (e.g. bg-brand-600, border-border, shadow-card) throughout the app. */
+@theme {
+  --font-sans: "Inter", system-ui, "Segoe UI", Roboto, sans-serif;
+
+  /* Brand blue */
+  --color-brand-50: #eff6ff;
+  --color-brand-100: #dbeafe;
+  --color-brand-200: #bfdbfe;
+  --color-brand-300: #93c5fd;
+  --color-brand-400: #60a5fa;
+  --color-brand-500: #3b82f6;
+  --color-brand-600: #2563eb;
+  --color-brand-700: #1d4ed8;
+  --color-brand-800: #1e40af;
+  --color-brand-900: #1e3a8a;
+
+  /* Teal secondary accent */
+  --color-teal-50: #f0fdfa;
+  --color-teal-100: #ccfbf1;
+  --color-teal-500: #14b8a6;
+  --color-teal-600: #0d9488;
+  --color-teal-700: #0f766e;
+
+  /* Neutral surface scale */
+  --color-surface: #ffffff;
+  --color-canvas: #f8fafc;
+  --color-border: #e2e8f0;
+  --color-border-strong: #cbd5e1;
+
+  /* Severity palette -- muted, not neon */
+  --color-severity-critical: #b91c1c;
+  --color-severity-critical-bg: #fef2f2;
+  --color-severity-critical-border: #fecaca;
+  --color-severity-high: #c2410c;
+  --color-severity-high-bg: #fff7ed;
+  --color-severity-high-border: #fed7aa;
+  --color-severity-medium: #a16207;
+  --color-severity-medium-bg: #fefce8;
+  --color-severity-medium-border: #fef08a;
+  --color-severity-low: #15803d;
+  --color-severity-low-bg: #f0fdf4;
+  --color-severity-low-border: #bbf7d0;
+
+  --shadow-card: 0 1px 2px 0 rgb(15 23 42 / 0.04), 0 1px 3px 0 rgb(15 23 42 / 0.06);
+  --shadow-card-hover: 0 4px 6px -1px rgb(15 23 42 / 0.06), 0 2px 4px -2px rgb(15 23 42 / 0.05);
+  --shadow-popover: 0 10px 15px -3px rgb(15 23 42 / 0.08), 0 4px 6px -4px rgb(15 23 42 / 0.06);
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+  }
+
+  body {
+    @apply bg-canvas text-slate-900 antialiased;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  * {
+    @apply border-border;
+  }
+}
+
+@layer utilities {
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-slate-300 rounded-full;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
